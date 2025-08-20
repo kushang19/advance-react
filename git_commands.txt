@@ -1,0 +1,67 @@
+🔹 1. Setup & Basics
+
+git init                          # initialize a new local repo
+git clone <repo-url>              # clone a remote repo
+git status                        # check changes (modified, staged, untracked)
+git log --oneline --graph --all   # see commit history in short form
+
+
+🔹 2. Working with Files
+echo "Hello Git" > file.txt       # create a file
+git add file.txt                  # stage the file
+git commit -m "add file.txt"      # commit staged changes
+git add .                         # stage all changes
+git commit -am "quick commit"     # add + commit tracked files
+
+
+🔹 3. Branching & Merging
+git branch                        # list branches
+git branch new-feature            # create a branch
+git checkout new-feature          # switch branch (old way)
+git switch new-feature            # switch branch (new way)
+git checkout -b bug-fix           # create + switch branch
+git merge new-feature             # merge branch into current
+git rebase main                   # reapply commits on top of another branch
+
+
+
+🔹 4. Undoing Things
+git reset HEAD~1                  # undo last commit (keep changes unstaged)
+git reset --hard HEAD~1           # delete last commit completely
+git checkout -- file.txt          # discard local changes in a file
+git restore file.txt              # (new way) discard changes in a file
+git revert <commit-id>            # undo commit by creating a new opposite commit
+
+
+
+🔹 5. Remote Repos
+git remote -v                     # list remotes
+git remote add origin <url>        # add remote
+git push -u origin main            # push branch to remote
+git pull origin main               # pull updates from remote
+git fetch origin                   # fetch changes without merging
+git push origin :branch-name       # delete remote branch
+
+
+🔹 6. Stashing (Temporary Save)
+git stash                         # save uncommitted changes
+git stash list                    # list stashes
+git stash apply                   # re-apply latest stash
+git stash pop                     # apply + remove stash
+git stash drop                    # delete a stash
+
+
+
+🔹 7. Tagging & Releases
+git tag v1.0                      # create lightweight tag
+git tag -a v1.0 -m "release v1.0" # create annotated tag
+git push origin v1.0              # push tag to remote
+git tag                           # list tags
+
+
+
+🔹 8. Cool Extras
+git diff                          # see unstaged changes
+git diff --staged                 # see staged changes
+git blame file.txt                # see who changed each line
+git shortlog -sn                  # list contributors & commits count
